@@ -1,11 +1,13 @@
 package blocks;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
-public abstract class Block implements Serializable {
+public class Block implements Serializable {
     public static final int SIZE = 32;
     private final int[] coords = new int[2];
+    private BufferedImage blockImage;
     protected String name;
     protected Color color;
     public Block(String name, Color color) {
@@ -29,5 +31,9 @@ public abstract class Block implements Serializable {
     public void setCoords(int x, int y) {
         this.coords[0] = x;
         this.coords[1] = y;
+    }
+
+    public BufferedImage getImage() {
+        return this.blockImage;
     }
 }
